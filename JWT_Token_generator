@@ -1,0 +1,22 @@
+<?php
+
+
+function signed_token($secretKey) {
+   $header = json_encode(["typ" => "JWT", "alg" => "HS256"]);
+   $base64UrlHeader = base64urlencode($header);
+
+   $payload = json_encode(["siteId" => "fb2d18d5-fa83-4893-b250-c908a92e4262","name" => "Rhythmus", "iat" => time() + 60]);
+   $base64UrlPayload = base64urlencode($payload);
+
+   $signature = hash_hmac("sha256", $base64UrlHeader . "." . $base64UrlPayload, $secretKey, true);
+   $base64UrlSignature = base64urlencode($signature);
+
+   return $base64UrlHeader . "." . $base64UrlPayload . "." . $base64UrlSignature;
+}
+
+
+function base64urlencode($str) {
+   return str_replace(['+', '/', '='], ['-', '_', ''], base64_encode($str));
+}
+$secretKey = 'AWqqEo9p4XL029Kh';
+echo signed_token($secretKey);
