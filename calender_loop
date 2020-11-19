@@ -1,0 +1,18 @@
+<?php
+	// Set timezone
+	date_default_timezone_set('UTC');
+
+	// Start date
+	$startTime = '2020/12/06';
+	// End date
+	$endTime = '2020/12/10';
+
+	while (strtotime($startTime) <= strtotime($endTime)) {
+               echo $startTime;
+                $startTime = date ("Y/m/d", strtotime("+1 day", strtotime($startTime)));
+               
+               echo "<br/>";
+	}
+
+?>
+
