@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>HTML-to-PDF Example</title>
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1"
+		/>
+		<!-- html2pdf CDN link -->
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+			integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+	</head>
+	<body>
+		<button id="download-button" onclick="printPageArea('invoice')">Download as PDF</button>
+		<div id="invoice">
+			<h1>Our Invoice</h1>
+		</div>
+
+		<script>
+			function printPageArea(areaID)
+{
+var printContent = document.getElementById(areaID).innerHTML;
+var originalContent = document.body.innerHTML;
+document.body.innerHTML = printContent;
+window.print();
+document.body.innerHTML = originalContent;
+}
+		</script>
+	</body>
+</html>
