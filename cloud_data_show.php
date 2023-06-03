@@ -18,4 +18,11 @@ print_r($menus['items'][1]);
 echo"<pre>";
 print_r($menus);
 echo $menus['items'][1];
+
+$query_user_any="SELECT userfield,SUBSTRING_INDEX(SUBSTRING_INDEX(accountcode,'~',-2),'~',1) as id  from  mdm_cdr.".$cdr_data." WHERE `disposition` = 'ANSWERED'  AND date(calldate)='{$dt}' AND `userfield` != 'N3obd'";
+$result_user_any = mysql_query($query_user_any,$mysql_link_rpt);
+while ($items = mysql_fetch_assoc($result_user_any)) 
+{
+	$anyreasondata[$items['id']] = $items;
+}
 ?>
