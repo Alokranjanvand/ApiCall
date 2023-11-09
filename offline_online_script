@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<style type="text/css">
+html,body{
+  min-height:100%;
+  width:100%;
+}
+*{
+  margin:0px;
+  padding:0px;
+}
+#heading{
+  width:100%;
+  text-align:center;
+  padding:30px;
+  color:#000;
+}
+.default #heading:after{
+  content:"Try to DISCONNECT from Internet...";
+  background:blue;
+  color:#fff;
+}
+.offline #heading:after{
+  content:"Oops you are OFFLINE...";
+  background:red;
+  color:#fff;
+}
+.online #heading:after{
+  content:"Wow! You are ONLINE again...";
+  background:green;
+  color:#fff;
+}
+
+
+    
+    </style>
+	<script type="text/javascript">
+window.addEventListener('online',  updateOnlineStatus);
+window.addEventListener('offline', updateOnlineStatus);
+function updateOnlineStatus(event) {
+  var condition = navigator.onLine ? "online" : "offline";
+  document.body.className = condition;
+}
+
+</script>
+</head>
+<body class="online">
+  <h2 id="heading"></h2>
+  <div class="trafficlight">
+   
+    
+  </div>
+</body>
+</html>
