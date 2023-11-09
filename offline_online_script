@@ -3,6 +3,7 @@
 <head>
 <title>Page Title</title>
 <style type="text/css">
+
 html,body{
   min-height:100%;
   width:100%;
@@ -15,30 +16,143 @@ html,body{
   width:100%;
   text-align:center;
   padding:30px;
-  color:#000;
+  color:rgba(255,255,255,0.5);
 }
 .default #heading:after{
   content:"Try to DISCONNECT from Internet...";
-  background:blue;
-  color:#fff;
 }
 .offline #heading:after{
   content:"Oops you are OFFLINE...";
-  background:red;
-  color:#fff;
 }
 .online #heading:after{
   content:"Wow! You are ONLINE again...";
-  background:green;
-  color:#fff;
+}
+.trafficlight{
+  background: #222;
+  background-image: linear-gradient(transparent 2%, transparent 3%, #111 30%);
+  width: 15vh;
+  height: 40vh;
+  margin: 4vh auto 0vh;
+  border-radius: 0px 0px 8vh 8vh;
+  position: absolute;
+  bottom: 24.5vh;
+  left: calc(50% - 7.5vh);
+  border: solid .5vh #333;
 }
 
+.trafficlight:before{
+  background: #222;
+  background-image: radial-gradient(#444, #000);
+  content: "";
+  width: 15vh;
+  height: 15vh;
+  margin: 0 auto;
+  position: absolute;
+  top: -2.5vh;
+  margin-left: 0ph;
+  border-radius: 50%;
+  z-index: -1;
+}
 
-    
+.trafficlight:after{
+  background: #222;
+  background-image: linear-gradient(-90deg, #222 0%, #444 30%, #000);
+  content: "";
+  width: 5vh;
+  height: 50vh;
+  margin-left: 5vh;
+  position: absolute;
+  top: 15vh;
+  z-index: -1;
+}
+
+.protector{
+  background: transparent;
+  width: 17vh;
+  height: 0;
+  position: absolute;
+  top: 2vh;
+  left: -5vh;
+  border-right: solid 4vh transparent;
+  border-left: solid 4vh transparent;
+  border-top: solid 10vh #222;
+  border-radius: 1.5vh;
+  z-index: -1;
+}
+
+.protector:nth-child(2){
+  top: 14vh;
+}
+
+.protector:nth-child(3){
+  top: 26vh;
+}
+
+.red{
+  background: red;
+  background-image: radial-gradient(brown, transparent);
+  color:red;
+  top: 2vh;
+  border: dotted .2vh red;
+}
+
+.yellow{
+  background: yellow;
+  background-image: radial-gradient(orange, transparent);
+  color:yellow;
+  border: dotted .2vh yellow;
+  top: 14.5vh;
+}
+
+.green{
+  background: green;
+  background-image: radial-gradient(lime, transparent);
+  color: green;
+  border: dotted .2vh lime;
+  top: 27vh;
+}
+
+.red, .yellow, .green{
+  background-size: .5vh .5vh;
+  width: 10vh;
+  height: 10vh;
+  border-radius: 50%;
+  position: absolute;
+  left: 2.5vh;
+  box-shadow: 0 0 2.0vh #111 inset;
+  cursor:pointer;
+  font-weight:900;
+  font-size:2.2vh;
+  text-align:center;
+  line-height:10vh;
+}
+
+.default .red, .default .green,
+.online  .red, .online .yellow,
+.offline .green, .offline .yellow
+{
+  opacity:.3;
+}
+.default .yellow,
+.online  .green,
+.offline .red{
+  opacity:1;
+}
+
+body.default{
+  background: linear-gradient(#08f, #fff);
+}
+body.offline{
+  background: linear-gradient(#f80, #fff);
+}
+body.online{
+  background: linear-gradient(#0f8, #fff);
+}
     </style>
 	<script type="text/javascript">
 window.addEventListener('online',  updateOnlineStatus);
 window.addEventListener('offline', updateOnlineStatus);
+
 function updateOnlineStatus(event) {
   var condition = navigator.onLine ? "online" : "offline";
   document.body.className = condition;
@@ -46,11 +160,15 @@ function updateOnlineStatus(event) {
 
 </script>
 </head>
-<body class="online">
+<body class="default">
   <h2 id="heading"></h2>
   <div class="trafficlight">
-   
-    
+    <div class="protector"></div>
+    <div class="protector"></div>
+    <div class="protector"></div>
+    <div class="red">@&#175;&&#175;@</div>
+    <div class="yellow">{_?_}</div>
+    <div class="green">>>></div>
   </div>
 </body>
 </html>
