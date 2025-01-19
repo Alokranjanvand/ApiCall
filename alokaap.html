@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Aap</title>
+	<!-- Bootstrap -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/styles.css?v=1.2" rel="stylesheet">
+	<link href="css/queries.css?v=1.2" rel="stylesheet">
+	<link rel="stylesheet" href="css/flexslider.css?v=1.2" type="text/css">
+	<link rel="stylesheet" href="css/animate.css" type="text/css">
+	<link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+	<style>
+		td {
+			padding: 0px;
+
+		}
+
+		.phone {
+			display: block;
+		}
+
+		h1 {
+			color: #ffffff;
+			font-size: 3.5rem;
+			font-weight: bold;
+			line-height: 70px;
+			padding: 5px;
+		}
+
+		h2 {
+			color: #ffffff;
+			font-size: 1.8rem;
+			font-weight: bold;
+			line-height: 45px;
+			/* padding: 5px; */
+			margin: 0px 0px 20px 0px;
+		}
+
+		/* .banner {
+			position: fixed;
+			top: 0;
+			z-index: 100;
+			left: 20%;
+			right: 20%;
+		} */
+
+
+
+		.toggle-button-cover {
+			display: table-cell;
+			position: relative;
+			width: 200px;
+			height: 140px;
+			box-sizing: border-box;
+		}
+
+		.button-cover {
+			height: 100px;
+			margin: 20px;
+			background-color: #fff;
+			box-shadow: 0 10px 20px -8px #ffcc00;
+			border-radius: 4px;
+		}
+
+		.button-cover:before {
+			counter-increment: button-counter;
+			content: counter(button-counter);
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			color: #d7e3e3;
+			font-size: 12px;
+			line-height: 1;
+			padding: 5px;
+		}
+
+		.button-cover,
+		.knobs,
+		.layer {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+		}
+
+		.button {
+			position: relative;
+			top: 50%;
+			width: 74px;
+			height: 36px;
+			margin: -10px auto 0 auto;
+			overflow: hidden;
+		}
+
+		.button.r,
+		.button.r .layer {
+			border-radius: 100px;
+		}
+
+		.button.b2 {
+			border-radius: 2px;
+		}
+
+		.checkbox {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			padding: 0;
+			margin: 0;
+			opacity: 0;
+			cursor: pointer;
+			z-index: 3;
+		}
+
+		.knobs {
+			z-index: 2;
+		}
+
+		.layer {
+			width: 100%;
+			background-color: #ffcc00;
+			transition: 0.3s ease all;
+			z-index: 1;
+		}
+
+		/* Button 1 */
+		#button-1 .knobs:before {
+			content: "नहीं";
+			position: absolute;
+			top: 4px;
+			left: 4px;
+			width: 27px;
+			height: 27px;
+			color: #fff;
+			font-size: 10px;
+			font-weight: bold;
+			text-align: center;
+			line-height: 1;
+			padding: 9px 4px;
+			background-color: #2e3e93;
+			border-radius: 50%;
+			transition: 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15) all;
+		}
+
+		#button-1 .checkbox:checked+.knobs:before {
+
+			content: "हाँ";
+			left: 42px;
+			background-color: #2e3e93;
+		}
+
+		#button-1 .checkbox:checked~.layer {
+			background-color: #ffcc00;
+		}
+
+		#button-1 .knobs,
+		#button-1 .knobs:before,
+		#button-1 .layer {
+			transition: 0.3s ease all;
+		}
+
+
+
+		@media only screen and (max-width: 768px) {
+
+			.phone {
+				display: none;
+			}
+
+			h1 {
+				color: #ffffff;
+				font-size: 2.6rem;
+				font-weight: bold;
+				line-height: 50px;
+			}
+
+
+
+			/* .banner {
+				position: fixed;
+				top: 0;
+				z-index: 100;
+				left: 0%;
+				right: 0%;
+			} */
+		}
+	</style>
+
+</head>
+
+<body>
+
+
+
+	<div class="container-fluid intro">
+
+		<header class="banner" id="hero">
+			<div class="hero"><img src="img/hero-banner.png"></div>
+		</header>
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2 text-center">
+				<h1><span style="color: #ffcc00; ">केजरीवाल
+					</span><br>को चुनने से<br>
+					आपका हर महीने<br> क्या
+					फायदा होगा ?</h1>
+				<a href="#details"><img style="max-width:250px;" src="img/btn-1.png"></a>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid intro" id="details" style="margin: 150px 0px;">
+		<header class="banner" id="hero">
+			<div class="hero"><img src="img/hero-bg.png"></div>
+		</header>
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2 text-left" style="padding: 0px 35px;">
+				<h2>आपके घर मैं कितनी
+					महिलायें
+					और बुजुर्ग रहते हैं ?</h2>
+
+				<!-- <div style="color: #ffffff; font-size: 1.5rem; font-weight: bold;">महिलायें:</div> -->
+				<div style="color: #ffffff; font-size: 1.3rem; font-weight: bold; margin-bottom: 10px;">
+					महिलायें:
+					<input type="radio" id="0" name="m" value="0" style="height:20px; width:20px;">
+					<label for="0" style="margin-right: 10px;">0</label>
+					<input type="radio" id="1" name="m" value="1" style="height:20px; width:20px;">
+					<label for="1" style="margin-right: 10px;">1</label>
+					<input type="radio" id="2" name="m" value="2" style="height:20px; width:20px;">
+					<label for="2" style="margin-right: 10px;">2</label>
+					<input type="radio" id="3" name="m" value="3" style="height:20px; width:20px;">
+					<label for="3" style="margin-right: 10px;">3</label>
+					<input type="radio" id="4" name="m" value="4" style="height:20px; width:20px;">
+					<label for="4" style="margin-right: 10px;">4</label>
+
+				</div>
+				<br>
+				<!-- <div style="color: #ffffff; font-size: 1.5rem; font-weight: bold;">बुजुर्ग:</div> -->
+				<div style="color: #ffffff;font-size: 1.3rem;font-weight: bold; margin-bottom: 10px;">
+					बुजुर्ग:
+					<input type="radio" id="0" name="b" value="0" style="height:20px; width:20px;">
+					<label for="0" style="margin-right: 10px;">0</label>
+					<input type="radio" id="1" name="b" value="1" style="height:20px; width:20px;">
+					<label for="1" style="margin-right: 10px;">1</label>
+					<input type="radio" id="2" name="b" value="2" style="height:20px; width:20px;">
+					<label for="2" style="margin-right: 10px;">2</label>
+					<input type="radio" id="3" name="b" value="3" style="height:20px; width:20px;">
+					<label for="3" style="margin-right: 10px;">3</label>
+					<input type="radio" id="4" name="b" value="4" style="height:20px; width:20px;">
+					<label for="4" style="margin-right: 10px;">4</label>
+
+				</div>
+
+				<br><br>
+
+				<table cellspacing="0" cellpadding="0" border="0" style="display: inline-block;">
+					<tr>
+						<td style="color: #ffffff;font-size: 1.3rem;font-weight: bold; text-align: left;">
+							क्या आपके बच्चे सरकारी स्कूल मैं पढ़ते हैं?</td>
+						<td>
+							<div class="button r" id="button-1">
+								<input type="checkbox" class="checkbox" name="govtSchool" id="govtSchool" checked />
+								<div class="knobs"></div>
+								<div class="layer"></div>
+								 
+							</div>
+						</td>
+					</tr>
+					<tr height="30">
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td style="color: #ffffff;font-size: 1.3rem;font-weight: bold; text-align: left;">
+							क्या आपकी हर महीने की बिजली खपत 200 यूनिट से
+							कम
+							है?</td>
+						<td>
+							<div class="button r" id="button-1">
+								<input type="checkbox" class="checkbox" name="below300" id="below300" checked />
+								<div class="knobs"></div>
+								<div class="layer"></div>
+								 
+							</div>
+						</td>
+					</tr>
+				</table>
+
+				<br><br>
+				<div style="text-align:center;">
+					<a href="#hero"><img style="max-width:80px;" src="img/back.png"></a>&nbsp;&nbsp;<a
+						href="#expense"><img style="max-width:80px;" src="img/next.png"></a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="container-fluid intro" id="expense"
+		style=" align-items: center;justify-content: center; margin: 150px 0px;">
+		<!-- <header>
+			<div class=" hero" id="expense"><img src="img/hero-bg.png"></div>
+	</header> -->
+		<div class="row">
+			<div class="col-md-12 text-center" style="padding: 0px 35px;"><br><br>
+				<h2>दिल्ली मैं केजरीवाल
+					सरकार
+					आने से आपकी कुल बचत </h2>
+				<div style="max-width: 500px; width: 100%; margin:15px auto;">
+					<table cellspacing="0" cellpadding="0" border="0" width="100%"
+						style="color: #ffffff; font-size:1rem;font-weight:bold; text-align: left; ">
+						<tr class="electricity_saving">
+							<td style="border-bottom:1px solid #ffcd00; padding: 15px;">बिजली</td>
+							<td style="border-bottom:1px solid #ffcd00;padding: 15px;"><i class="fa fa-inr"></i><span id="total_eletricity"> 3,333</span>
+							</td>
+						</tr>
+						<tr>
+							<td style="border-bottom:1px solid #ffcd00;padding: 15px;">पानी </td>
+							<td style="border-bottom:1px solid #ffcd00;padding: 15px;"><i class="fa fa-inr"></i> 1,000
+							</td>
+						</tr>
+						<tr class="education_saving">
+							<td style="border-bottom:1px solid #ffcd00;padding: 15px;">शिक्षा</td>
+							<td style="border-bottom:1px solid #ffcd00;padding: 15px;"><i class="fa fa-inr"></i> <span id="total_educations">3,333</span>
+							</td>
+						</tr>
+						<tr>
+							<td style="border-bottom:1px solid #ffcd00;padding: 15px;">स्वास्थ्य</td>
+							<td style="border-bottom:1px solid #ffcd00;padding: 15px;"><i class="fa fa-inr"></i> 1,250
+							</td>
+						</tr>
+						<tr>
+							<td style="border-bottom:1px solid #ffcd00;padding: 15px;">मोहल्ला क्लिनिक</td>
+							<td style="border-bottom:1px solid #ffcd00;padding: 15px;"><i class="fa fa-inr"></i> 2,250
+							</td>
+						</tr>
+						<tr class="elder_saving" style="display: none;">
+							<td style="border-bottom:1px solid #ffcd00;padding: 15px;">संजीवनी योजना</td>
+							<td style="border-bottom:1px solid #ffcd00;padding: 15px;"><i class="fa fa-inr"></i> <span id="total_sanjivini">2,250</span>
+							</td>
+						</tr>
+						<tr class="elder_saving" style="display: none;">
+							<td style="border-bottom:1px solid #ffcd00;padding: 15px;">तीर्थ यात्रा </td>
+							<td style="border-bottom:1px solid #ffcd00;padding: 15px;"><i class="fa fa-inr"></i> <span id="total_yatra">417</span>
+							</td>
+						</tr>
+						<tr class="woment_saving" style="display: none;">
+							<td style="border-bottom:1px solid #ffcd00;padding: 15px;">महिला सम्मान</td>
+							<td style="border-bottom:1px solid #ffcd00;padding: 15px;"><i class="fa fa-inr"></i> <span id="total_mahila_samman">2,100</span>
+							</td>
+						</tr>
+						<tr class="woment_saving" style="display: none;">
+							<td style="padding: 15px;">महिलाओं की फ्री बस </td>
+							<td style="padding: 15px;"><i class="fa fa-inr"></i> <span id="total_mahila_sevafree">3,600</span></td>
+						</tr>
+						<!-- <tr style="background-color: #ffffff; color: #00438d;">
+							<td style="padding: 15px;">महीने की कुल बचत </td>
+							<td style="padding: 15px;"><i class="fa fa-inr"></i> 17933</td>
+						</tr> -->
+					</table>
+				</div>
+				<br>
+
+				<a href="#details"><img style="max-width:80px;" src="img/back.png"></a>&nbsp;&nbsp;<a
+					href="#saving"><img style="max-width:80px;" src="img/next.png"></a>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="container-fluid intro" id="saving" style=" align-items: center;justify-content: center;">
+		<header class="banner" id="hero">
+			<div class="hero"><img src="img/hero-bg.png"></div>
+		</header>
+		<div class="row">
+			<div class="col-md-12 text-center" style="padding: 0px 35px;">
+
+				<div style=" width: 100%; margin:15px auto; display: flow;">
+
+					<div>
+						<h2>दिल्ली
+							मैं केजरीवाल सरकार आने से आपको हर महीने<br>
+							<span
+								style="font-size: 35px; background-color: #ffffff; border-radius: 5px; color: #00438d; padding: 5px 10px; margin:50px; "><i
+									class="fa fa-inr"></i>
+								<span id="totalSaving">11,116</span> </span><br>
+							की बचत होगी
+						</h2>
+					</div>
+					<hr style="width: 80%; border-color: #ffcc00;">
+					<div>
+
+						<table cellspacing="0" cellpadding="0" border="0"
+							style="max-width: 500px; width: 100%; margin:15px auto 25px auto;">
+							<tr>
+								<td style="border:none;"><img src="img/phone.png" height="345" class="phone">
+								</td>
+								<td style="border:none;">
+									<table cellspacing="0" cellpadding="0" border="0" width="100%">
+										<tr>
+											<td style="border:none; width: 30px;"><img src="img/check.png" width="20">
+											</td>
+											<td
+												style="border:none; color: #ffffff; font-size:1rem;font-weight:bold; text-align: left;">
+												दिल्ली मैं बिजली, पानी, शिक्षा, स्वास्थ्य मुफ्त है।
+											</td>
+										</tr>
+										<tr>
+											<td height="10"></td>
+										</tr>
+										<tr>
+											<td style="border:none;width: 30px;"><img src="img/check.png" width="20">
+											</td>
+											<td
+												style="border:none; color: #ffffff; font-size:1rem;font-weight:bold; text-align: left;">
+												हर महिला को हर महीने Rs. 2100 और उनकी बस यात्रा
+												मुफ्त। </td>
+										</tr>
+										<tr>
+											<td height="10"></td>
+										</tr>
+										<tr>
+											<td style="border:none;width: 30px;"><img src="img/check.png" width="20">
+											</td>
+											<td
+												style="border:none; color: #ffffff; font-size:1rem;font-weight:bold; text-align: left;">
+												बुजर्गो का इलाज और तीर्थ यात्रा मुफ्त है। </td>
+										</tr>
+
+									</table>
+								</td>
+							</tr>
+						</table>
+
+
+						<div>
+							<div style="display:flex; justify-content: space-between;">
+								<div style="padding: 9px;border-radius: 5px;margin: 10px 0px;font-family: Arial, sans-serif;font-size: 13px;width: 32%;text-align: center;color: white;font-weight: 600; border: 1px solid #fff;
+    border-radius: 10px;">
+									<div>
+										<a href="#" id="shareWhatsApp"
+											style="color:#ffffff;vertical-align: middle; display:flex; align-items: center; justify-content: center;">Share
+											on:&nbsp; <img src="img/WhatsApp.svg" width="30"></a>
+
+									</div>
+								</div>
+
+								<div style="padding: 9px;border-radius: 5px;margin: 10px 0px;font-family: Arial, sans-serif;font-size: 13px;width: 32%;text-align: center;color: white;font-weight: 600;border: 1px solid #fff;
+    border-radius: 10px;">
+									<div>
+										<a href="#" id="shareWhatsApp"
+											style="color:#ffffff;vertical-align: middle; display:flex; align-items: center; justify-content: center;">Share
+											on:&nbsp; <img src="img/x.svg" width="30"></a>
+
+									</div>
+								</div>
+
+								<div style="padding: 9px;border-radius: 5px;margin: 10px 0px;font-family: Arial, sans-serif;font-size: 13px;width: 32%;text-align: center;color: white;font-weight: 600;border: 1px solid #fff;
+    border-radius: 10px;">
+									<div id="share">
+										<a href="#" id="shareMail"
+											style="color:#ffffff;vertical-align: middle; display:flex; align-items: center; justify-content: center;">Share
+											on:&nbsp; <img src="img/fb.svg" width="30">
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<br><br>
+
+					</div>
+					<a href="#hero"><img style="max-width:80px;" src="img/back.png"></a>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins)-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/scripts.js"></script>
+	<script src="js/modernizr.js"></script>
+	<script src="js/waypoints.min.js"></script>
+
+
+	<script>
+		$(document).ready(function () {
+			let baseSaving = 4500;
+			let electricitySaving = 3333;
+			let education = 3333;
+			let elderlySaving = 2667;
+			let women_saving = 5700;
+			let mahila_samman = 2100;
+			let mahila_free = 3600;
+			let sanjivini = 2250;
+			let yatra = 417;
+			let total_sanjivini = 0;
+			let total_yatra = 0;
+			let total_mahila_samman = 0;
+			let total_mahila_free = 0;
+
+			// Function to calculate the total savings
+			function calculateTotalSaving() {
+				var totalSaving = baseSaving;
+
+				// Add savings based on the number of women selected
+				var womenCount = $("input[name='m']:checked").val();
+				if (womenCount) {
+					totalSaving += women_saving * parseInt(womenCount);
+					total_mahila_samman = mahila_samman * parseInt(womenCount);
+					total_mahila_free = mahila_free * parseInt(womenCount);
+					if(womenCount>0)
+					{
+						$(".woment_saving").show();
+						$("#total_mahila_samman").text(total_mahila_samman.toLocaleString());
+						$("#total_mahila_sevafree").text(total_mahila_free.toLocaleString());
+					}else
+					{
+						$(".woment_saving").hide();
+					}
+					
+				}else
+				{
+					$(".woment_saving").hide();
+				}
+
+				// Add savings based on the number of elderly selected
+				var elderlyCount = $("input[name='b']:checked").val();
+				if (elderlyCount) {
+					totalSaving += elderlySaving * parseInt(elderlyCount);
+					total_sanjivini = sanjivini * parseInt(elderlyCount);
+					total_yatra  = yatra * parseInt(elderlyCount);
+					if(elderlyCount>0)
+					{
+						$(".elder_saving").show();
+						$("#total_sanjivini").text(total_sanjivini.toLocaleString());
+						$("#total_yatra").text(total_yatra.toLocaleString());
+					}else
+					{
+						$(".elder_saving").hide();
+					}
+
+				}else
+				{
+					$(".elder_saving").hide();
+				}
+
+				// Add savings if the user selects govtSchool checkbox
+				if ($("#govtSchool").is(":checked")) {
+					totalSaving += education;
+					$("#total_educations").text(education.toLocaleString());
+					$(".education_saving").show();
+				}else
+				{
+					$(".education_saving").hide();
+				}
+
+				// Add savings if the user selects below300 checkbox
+				if ($("#below300").is(":checked")) {
+					totalSaving += electricitySaving;
+					$("#total_eletricity").text(education.toLocaleString());
+					$(".electricity_saving").show();
+				}else
+				{
+					$(".electricity_saving").hide();
+				}
+
+				// Update the total savings text in the DOM
+				//$("#totalSaving").text(totalSaving);
+				// totalSaving += 1000;
+				$("#totalSaving").text(totalSaving.toLocaleString());
+			}
+
+			// Event listeners for form inputs
+			$("input[name='m'], input[name='b'], #govtSchool, #below300").change(function () {
+				calculateTotalSaving(); // Recalculate the total savings whenever form input changes
+			});
+		});
+	</script>
+</body>
+
+</html>
